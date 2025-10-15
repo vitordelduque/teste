@@ -227,8 +227,8 @@ export function Network() {
               </div>
 
               <div className="mt-4 flex gap-2">
-                <a href={directionsUrl} target="_blank" rel="noreferrer" className="flex-1 text-center bg-wevets-blue text-white py-2 rounded-lg font-bold">Ver rota</a>
-                <a href={`https://www.openstreetmap.org/?mlat=${selected.lat}&mlon=${selected.lon}#map=16/${selected.lat}/${selected.lon}`} target="_blank" rel="noreferrer" className="flex-1 text-center border border-gray-200 py-2 rounded-lg">Abrir mapa</a>
+                <a href={directionsUrl} target="_blank" rel="noreferrer" className="flex-1 text-center bg-wevets-blue text-white py-2 rounded-lg font-bold">Ver rota ({mapsProvider === 'google' ? 'Google' : mapsProvider === 'waze' ? 'Waze' : 'OSM'})</a>
+                <a href={mapsProvider === 'google' ? `https://www.google.com/maps/search/?api=1&query=${selected.lat},${selected.lon}` : mapsProvider === 'waze' ? `https://waze.com/ul?ll=${selected.lat},${selected.lon}&navigate=yes` : `https://www.openstreetmap.org/?mlat=${selected.lat}&mlon=${selected.lon}#map=16/${selected.lat}/${selected.lon}`} target="_blank" rel="noreferrer" className="flex-1 text-center border border-gray-200 py-2 rounded-lg">Abrir mapa</a>
               </div>
             </div>
 
