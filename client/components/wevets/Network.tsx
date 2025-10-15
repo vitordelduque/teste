@@ -139,7 +139,7 @@ export function Network() {
               Encontre a unidade mais próxima, veja horários e pegue a rota diretamente no mapa.
             </p>
           </div>
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-4">
             <div className="flex items-center gap-2 bg-gray-100 rounded-lg px-3 py-2">
               <Search className="w-5 h-5 text-wevets-gray" />
               <input
@@ -148,6 +148,20 @@ export function Network() {
                 placeholder="Pesquisar cidade, endereço ou unidade"
                 className="bg-transparent outline-none text-sm"
               />
+            </div>
+
+            <div className="flex items-center gap-2">
+              <label htmlFor="mapsProvider" className="text-sm text-gray-600">Rota:</label>
+              <select
+                id="mapsProvider"
+                value={mapsProvider}
+                onChange={(e) => setMapsProvider(e.target.value as any)}
+                className="rounded border px-2 py-1 text-sm"
+              >
+                <option value="google">Google Maps</option>
+                <option value="waze">Waze</option>
+                <option value="osm">OpenStreetMap</option>
+              </select>
             </div>
           </div>
         </div>
