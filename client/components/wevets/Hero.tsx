@@ -27,7 +27,7 @@ export function Hero() {
 
             <div className="mt-8 flex flex-col sm:flex-row items-center sm:items-start gap-3">
               <Button className="bg-wevets-blue text-white font-bold py-4 px-6 text-base w-full sm:w-auto">Proteja seu pet</Button>
-              <Button variant="outline" className="text-white border-white font-bold py-4 px-6 w-full sm:w-auto">Fale com um especialista</Button>
+              <Button variant="outline" className="text-wevets-navy border-white font-bold py-4 px-6 w-full sm:w-auto">Fale com um especialista</Button>
             </div>
 
             <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-md">
