@@ -63,11 +63,38 @@ export function Network() {
   const [selectedId, setSelectedId] = useState(UNITS[0].id);
   const [query, setQuery] = useState("");
 
+  const [userLocation, setUserLocation] = useState<{lat:number, lon:number} | null>(null);
+
+  // Haversine distance in kilometers
+  function getDistanceKm(lat1:number, lon1:number, lat2:number, lon2:number) {
+    const R = 6371; // km
+    const toRad = (v:number) => (v * Math.PI) / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon/2) * Math.sin(dLon/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    return R * c;
+  }
+
+  useEffect(() => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      (pos) => setUserLocation({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
+      () => {} // ignore errors silently, user can still search
+    );
+  }, []);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return UNITS;
-    return UNITS.filter(u => u.name.toLowerCase().includes(q) || u.city.toLowerCase().includes(q) || u.address.toLowerCase().includes(q));
-  }, [query]);
+    let list = UNITS.filter(u => !q || u.name.toLowerCase().includes(q) || u.city.toLowerCase().includes(q) || u.address.toLowerCase().includes(q));
+
+    if (userLocation) {
+      list = list.map(u => ({ ...u, __distance: getDistanceKm(userLocation.lat, userLocation.lon, u.lat, u.lon) }))
+                 .sort((a:any,b:any) => (a.__distance ?? 0) - (b.__distance ?? 0));
+    }
+
+    return list;
+  }, [query, userLocation]);
 
   const selected = UNITS.find(u => u.id === selectedId) || UNITS[0];
 
