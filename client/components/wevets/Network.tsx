@@ -101,9 +101,26 @@ export function Network() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalUnit, setModalUnit] = useState<typeof UNITS[number] | null>(null);
 
-  const embedUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${selected.lon - 0.02}%2C${selected.lat - 0.01}%2C${selected.lon + 0.02}%2C${selected.lat + 0.01}&layer=mapnik&marker=${selected.lat}%2C${selected.lon}`;
+  const [mapsProvider, setMapsProvider] = useState<'google'|'waze'|'osm'>('google');
 
-  const directionsUrl = `https://www.openstreetmap.org/directions?from=&to=${selected.lat}%2C${selected.lon}`;
+  const embedUrl = useMemo(() => {
+    if (mapsProvider === 'google') {
+      // Simple google maps embed using query
+      return `https://www.google.com/maps?q=${selected.lat},${selected.lon}&z=14&output=embed`;
+    }
+    // default to OSM
+    return `https://www.openstreetmap.org/export/embed.html?bbox=${selected.lon - 0.02}%2C${selected.lat - 0.01}%2C${selected.lon + 0.02}%2C${selected.lat + 0.01}&layer=mapnik&marker=${selected.lat}%2C${selected.lon}`;
+  }, [mapsProvider, selected.lat, selected.lon]);
+
+  const directionsUrl = useMemo(() => {
+    if (mapsProvider === 'google') {
+      return `https://www.google.com/maps/dir/?api=1&destination=${selected.lat},${selected.lon}`;
+    }
+    if (mapsProvider === 'waze') {
+      return `https://waze.com/ul?ll=${selected.lat},${selected.lon}&navigate=yes`;
+    }
+    return `https://www.openstreetmap.org/directions?from=&to=${selected.lat}%2C${selected.lon}`;
+  }, [mapsProvider, selected.lat, selected.lon]);
 
   const openUnitModal = (unit: typeof UNITS[number]) => {
     setModalUnit(unit);
