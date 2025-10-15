@@ -46,8 +46,8 @@ export function Hero() {
             </div>
 
             <div className="mt-6 flex items-center gap-3 text-sm text-gray-300">
-              <span className="bg-white/10 px-2 py-1 rounded">De R$249,90 por</span>
-              <span className="text-3xl font-extrabold">R$199,90</span>
+              <span className="bg-white/10 px-2 py-1 rounded">Planos a partir de</span>
+              <span className="text-3xl font-extrabold">R$ 4,90</span>
               <span className="text-wevets-lightBlue">/mês</span>
             </div>
           </div>
@@ -57,7 +57,7 @@ export function Hero() {
             <div className="relative w-full max-w-md">
               <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/5">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/740e06e73b4b3ee11914e18aec481fc12b178181?width=1200"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F6edab459a0864c6f99da7acbabe4d916"
                   alt="Cachorro feliz com tutor"
                   className="w-full h-96 object-cover"
                 />
