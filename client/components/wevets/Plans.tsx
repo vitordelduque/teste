@@ -5,23 +5,17 @@ export function Plans() {
   const plans = [
     {
       name: "Plano Start",
+      // promotional example: originalPrice -> struck-through, price -> current
+      originalPrice: "R$19,90",
       price: "R$14,90",
       color: "bg-wevets-skyBlue",
+      promoLabel: "Promoção",
       features: [
         "Vacinas obrigatórias",
         "Consultas em horário normal",
         "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
         "Exames laboratoriais de check up",
-      ]
+      ],
     },
     {
       name: "Plano Plus",
@@ -31,17 +25,7 @@ export function Plans() {
         "Vacinas obrigatórias",
         "Consultas em horário normal",
         "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-      ]
+      ],
     },
     {
       name: "Plano Premium",
@@ -51,18 +35,8 @@ export function Plans() {
         "Vacinas obrigatórias",
         "Consultas em horário normal",
         "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-        "Consultas em horário de plantão",
-      ]
-    }
+      ],
+    },
   ];
 
   return (
@@ -71,7 +45,7 @@ export function Plans() {
         <h2 className="font-ubuntu text-4xl font-bold text-center text-white mb-6">
           Planos que cabem no bolso e para todas ocasiões
         </h2>
-        
+
         <div className="flex flex-col items-center gap-2 mb-6">
           <div className="flex items-center gap-1 bg-gray-200 rounded-full p-0.5 border border-gray-300">
             <button className="px-4 py-2 rounded-full bg-white text-wevets-blue font-bold">
@@ -81,7 +55,7 @@ export function Plans() {
               Anual
             </button>
           </div>
-          
+
           <div className="flex items-center gap-1 text-wevets-lightBlue">
             <Diamond className="w-6 h-6 fill-wevets-lightBlue" />
             <span className="font-montserrat text-sm font-bold">
@@ -93,41 +67,51 @@ export function Plans() {
         <div className="grid grid-cols-3 gap-6">
           {plans.map((plan, index) => (
             <div key={index} className="flex flex-col">
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex-1 flex flex-col">
-                <div className={`${plan.color} px-6 py-2 rounded-t-2xl`}>
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex-1 flex flex-col relative">
+                <div className={`${plan.color} px-6 py-2 rounded-t-2xl relative`}> 
                   <h3 className="font-ubuntu text-xl font-bold text-white text-center">
                     {plan.name}
                   </h3>
+                  {plan.promoLabel && (
+                    <div className="absolute right-3 top-3 bg-wevets-paleLightBlue text-wevets-blue px-3 py-1 rounded-full text-xs font-bold">
+                      {plan.promoLabel}
+                    </div>
+                  )}
                 </div>
-                
+
                 <div className={`${plan.color} pt-0 pb-2`}>
                   <div className="bg-white rounded-t-2xl p-6 flex-1 flex flex-col">
-                    <div className="flex items-center justify-center mb-4">
-                      <span className="font-ubuntu text-4xl font-bold text-wevets-skyBlue">
-                        {plan.price}
-                      </span>
-                      <span className="font-ubuntu text-lg font-bold text-wevets-skyBlue">
-                        /mês
-                      </span>
+                    <div className="flex flex-col items-center justify-center mb-4">
+                      {plan.originalPrice ? (
+                        <div className="text-center">
+                          <div className="text-sm text-gray-500 line-through">De {plan.originalPrice}</div>
+                          <div className="flex items-baseline gap-2 justify-center">
+                            <span className="font-ubuntu text-4xl font-bold text-wevets-skyBlue">{plan.price}</span>
+                            <span className="font-ubuntu text-lg font-bold text-wevets-skyBlue">/mês</span>
+                          </div>
+                          <div className="text-sm text-wevets-blue font-semibold mt-1">Oferta por tempo limitado</div>
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center mb-4">
+                          <span className="font-ubuntu text-4xl font-bold text-wevets-skyBlue">{plan.price}</span>
+                          <span className="font-ubuntu text-lg font-bold text-wevets-skyBlue">/mês</span>
+                        </div>
+                      )}
                     </div>
-                    
+
                     <div className="space-y-2 mb-6 flex-1">
                       {plan.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           <Check className="w-5 h-5 text-wevets-blue flex-shrink-0" />
-                          <span className="font-montserrat text-xs text-wevets-gray">
-                            {feature}
-                          </span>
+                          <span className="font-montserrat text-xs text-wevets-gray">{feature}</span>
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="h-px bg-gray-200 my-4" />
-                    
-                    <Button className="w-full bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold mb-4">
-                      Assinar
-                    </Button>
-                    
+
+                    <Button className="w-full bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold mb-4">Assinar</Button>
+
                     <button className="flex items-center justify-center gap-1 text-wevets-blue text-xs">
                       <span>Serviços inclusos e tempo para uso</span>
                       <ChevronRight className="w-4 h-4" />
