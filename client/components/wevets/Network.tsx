@@ -10,7 +10,16 @@ const UNITS = [
     lat: -23.561414,
     lon: -46.655881,
     hours: "24h",
-    img: "https://api.builder.io/api/v1/image/assets/TEMP/740d8e33b9fb478e7af321964bd3050ceb61534f?width=600"
+    img: "https://api.builder.io/api/v1/image/assets/TEMP/740d8e33b9fb478e7af321964bd3050ceb61534f?width=600",
+    services: ["Consultas", "Emergência 24h", "Exames laboratoriais", "Cirurgias"],
+    images: [
+      "https://api.builder.io/api/v1/image/assets/TEMP/740d8e33b9fb478e7af321964bd3050ceb61534f?width=900",
+      "https://api.builder.io/api/v1/image/assets/TEMP/8a36d4910fb39db9d9bb125d45d3357c9263f400?width=900"
+    ],
+    reviews: [
+      { id: 1, author: "Joana", rating: 5, text: "Ótimo atendimento, profissionais muito atenciosos." },
+      { id: 2, author: "Carlos", rating: 4, text: "Atendimento rápido, recomendo." }
+    ]
   },
   {
     id: "u2",
@@ -20,7 +29,14 @@ const UNITS = [
     lat: -23.561123,
     lon: -46.689452,
     hours: "09:00 - 21:00",
-    img: "https://api.builder.io/api/v1/image/assets/TEMP/147a03637285ad39f32e679c96585502b97004a5?width=600"
+    img: "https://api.builder.io/api/v1/image/assets/TEMP/147a03637285ad39f32e679c96585502b97004a5?width=600",
+    services: ["Consultas", "Vacinação", "Check-up"],
+    images: [
+      "https://api.builder.io/api/v1/image/assets/TEMP/147a03637285ad39f32e679c96585502b97004a5?width=900"
+    ],
+    reviews: [
+      { id: 1, author: "Mariana", rating: 5, text: "Equipe excelente e instalações modernas." }
+    ]
   },
   {
     id: "u3",
@@ -30,7 +46,14 @@ const UNITS = [
     lat: -22.90556,
     lon: -47.06083,
     hours: "08:00 - 20:00",
-    img: "https://api.builder.io/api/v1/image/assets/TEMP/9b8857370b612990e1c89d50efbdc2806ba6b0e1?width=600"
+    img: "https://api.builder.io/api/v1/image/assets/TEMP/9b8857370b612990e1c89d50efbdc2806ba6b0e1?width=600",
+    services: ["Consultas", "Internação", "Cirurgias"],
+    images: [
+      "https://api.builder.io/api/v1/image/assets/TEMP/9b8857370b612990e1c89d50efbdc2806ba6b0e1?width=900"
+    ],
+    reviews: [
+      { id: 1, author: "Paulo", rating: 4, text: "Bom atendimento, porém fila um pouco longa." }
+    ]
   }
 ];
 
