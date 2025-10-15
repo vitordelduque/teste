@@ -139,9 +139,8 @@ export function Network() {
 
               <div className="space-y-3 max-h-72 overflow-auto">
                 {filtered.map(unit => (
-                  <button
+                  <div
                     key={unit.id}
-                    onClick={() => setSelectedId(unit.id)}
                     className={`w-full text-left p-3 rounded-lg flex items-start gap-3 hover:bg-gray-50 ${unit.id === selectedId ? 'ring-2 ring-wevets-blue bg-gray-50' : ''}`}
                   >
                     <img src={unit.img} alt="unit" className="w-20 h-16 object-cover rounded-md flex-shrink-0" />
@@ -156,7 +155,14 @@ export function Network() {
                         <span className="inline-flex items-center gap-1 px-2 py-1 rounded bg-gray-100 text-gray-600">Veterinária Geral</span>
                       </div>
                     </div>
-                  </button>
+
+                    <div className="flex flex-col gap-2">
+                      <Button variant="outline" size="sm" onClick={() => openUnitModal(unit)}>
+                        Detalhes
+                      </Button>
+                      <button onClick={() => setSelectedId(unit.id)} className="text-xs text-wevets-blue">Selecionar</button>
+                    </div>
+                  </div>
                 ))}
                 {filtered.length === 0 && (
                   <div className="text-sm text-gray-500">Nenhuma unidade encontrada para a pesquisa.</div>
