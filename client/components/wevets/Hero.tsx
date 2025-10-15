@@ -21,7 +21,7 @@ export function Hero() {
           
           <div className="space-y-4">
             <p className="font-ubuntu text-[32px] leading-[120%] text-white">
-              Planos a partir de <span className="font-bold">R$ 14,90</span>
+              Planos a partir de <span className="font-bold">R$ 4,90</span>
             </p>
             
             <div className="border border-white rounded-lg p-2 space-y-2">
@@ -35,10 +35,16 @@ export function Hero() {
                 20 hospitais veterinários 24hrs
               </p>
             </div>
-            
-            <Button className="w-full bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold text-base py-6">
-              ASSINE AGORA
-            </Button>
+
+            <div className="flex flex-col sm:flex-row items-center sm:justify-end gap-3 mt-2">
+              <Button className="w-full sm:w-auto bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold text-base py-4">
+                Proteja seu pet
+              </Button>
+
+              <Button variant="outline" className="w-full sm:w-auto text-wevets-blue font-bold text-base py-4">
+                Fale com um especialista
+              </Button>
+            </div>
           </div>
         </div>
       </div>
