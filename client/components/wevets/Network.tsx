@@ -282,8 +282,8 @@ export function Network() {
 
               <DialogFooter>
                 <div className="flex gap-2 w-full">
-                  <a className="flex-1" href={`https://www.openstreetmap.org/directions?from=&to=${modalUnit.lat}%2C${modalUnit.lon}`} target="_blank" rel="noreferrer">
-                    <Button className="w-full">Ver rota</Button>
+                  <a className="flex-1" href={mapsProvider === 'google' ? `https://www.google.com/maps/dir/?api=1&destination=${modalUnit.lat},${modalUnit.lon}` : mapsProvider === 'waze' ? `https://waze.com/ul?ll=${modalUnit.lat},${modalUnit.lon}&navigate=yes` : `https://www.openstreetmap.org/directions?from=&to=${modalUnit.lat}%2C${modalUnit.lon}`} target="_blank" rel="noreferrer">
+                    <Button className="w-full">Ver rota ({mapsProvider === 'google' ? 'Google' : mapsProvider === 'waze' ? 'Waze' : 'OSM'})</Button>
                   </a>
                   <Button variant="outline" onClick={() => setModalOpen(false)}>Fechar</Button>
                 </div>
