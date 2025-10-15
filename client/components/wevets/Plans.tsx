@@ -5,7 +5,6 @@ export function Plans() {
   const plans = [
     {
       name: "Plano Start",
-      // promotional example: originalPrice -> struck-through, price -> current
       originalPrice: "R$19,90",
       price: "R$14,90",
       color: "bg-wevets-skyBlue",
@@ -19,28 +18,50 @@ export function Plans() {
     },
     {
       name: "Plano Plus",
+      originalPrice: "R$59,90",
       price: "R$49,90",
       color: "bg-wevets-skyBlue",
+      promoLabel: "Promoção",
       features: [
         "Vacinas obrigatórias",
         "Consultas em horário normal",
         "Consultas em horário de plantão",
+        "Exames laboratoriais de check up",
+        "Assistência telefônica",
       ],
     },
     {
       name: "Plano Premium",
+      originalPrice: "R$119,90",
       price: "R$94,90",
       color: "bg-wevets-skyBlue",
+      promoLabel: "Promoção",
       features: [
         "Vacinas obrigatórias",
         "Consultas em horário normal",
         "Consultas em horário de plantão",
+        "Cirurgias",
+        "Internação",
+      ],
+    },
+    {
+      name: "Plano Ultra",
+      originalPrice: "R$179,90",
+      price: "R$149,90",
+      color: "bg-wevets-skyBlue",
+      promoLabel: "Lançamento",
+      features: [
+        "Vacinas e imunizações completas",
+        "Consultas ilimitadas",
+        "Atendimento 24h com prioridade",
+        "Cobertura cirúrgica avançada",
+        "Exames e diagnósticos inclusos",
       ],
     },
   ];
 
   return (
-    <section className="py-12 px-32" style={{ background: "linear-gradient(180deg, #092744 50.48%, #FFF 50.49%)" }}>
+    <section className="py-12 px-6 lg:px-32" style={{ background: "linear-gradient(180deg, #092744 50.48%, #FFF 50.49%)" }}>
       <div className="max-w-6xl mx-auto">
         <h2 className="font-ubuntu text-4xl font-bold text-center text-white mb-6">
           Planos que cabem no bolso e para todas ocasiões
@@ -64,11 +85,11 @@ export function Plans() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, index) => (
             <div key={index} className="flex flex-col">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex-1 flex flex-col relative">
-                <div className={`${plan.color} px-6 py-2 rounded-t-2xl relative`}> 
+                <div className={`${plan.color} px-6 py-2 rounded-t-2xl relative`}>
                   <h3 className="font-ubuntu text-xl font-bold text-white text-center">
                     {plan.name}
                   </h3>
