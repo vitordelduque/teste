@@ -181,6 +181,60 @@ export function Network() {
             </div>
           </aside>
         </div>
+
+        {/* Unit details modal */}
+        <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+          {modalUnit && (
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>{modalUnit.name}</DialogTitle>
+                <DialogDescription>{modalUnit.address} — Horário: {modalUnit.hours}</DialogDescription>
+              </DialogHeader>
+
+              <div className="grid grid-cols-1 gap-4">
+                <div className="flex gap-2 overflow-x-auto">
+                  {modalUnit.images.map((src, i) => (
+                    <img key={i} src={src} alt={`${modalUnit.name} ${i}`} className="w-48 h-32 object-cover rounded-md" />
+                  ))}
+                </div>
+
+                <div>
+                  <h4 className="font-semibold mb-2">Serviços disponíveis</h4>
+                  <ul className="list-disc pl-5 text-sm text-gray-700">
+                    {modalUnit.services.map((s, idx) => (
+                      <li key={idx}>{s}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold mb-2">Avaliações</h4>
+                  <div className="space-y-2">
+                    {modalUnit.reviews.map(r => (
+                      <div key={r.id} className="border p-2 rounded">
+                        <div className="flex items-center justify-between">
+                          <strong>{r.author}</strong>
+                          <span className="text-sm text-gray-600">{r.rating} ★</span>
+                        </div>
+                        <p className="text-sm text-gray-700">{r.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <DialogFooter>
+                <div className="flex gap-2 w-full">
+                  <a className="flex-1" href={`https://www.openstreetmap.org/directions?from=&to=${modalUnit.lat}%2C${modalUnit.lon}`} target="_blank" rel="noreferrer">
+                    <Button className="w-full">Ver rota</Button>
+                  </a>
+                  <Button variant="outline" onClick={() => setModalOpen(false)}>Fechar</Button>
+                </div>
+              </DialogFooter>
+            </DialogContent>
+          )}
+        </Dialog>
+
       </div>
     </section>
   );
