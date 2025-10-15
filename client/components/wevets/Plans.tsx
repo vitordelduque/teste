@@ -5,10 +5,9 @@ export function Plans() {
   const plans = [
     {
       name: "Básico",
-      originalPrice: "R$19,90",
-      price: "R$14,90",
+      price: "R$4,90",
       color: "bg-wevets-skyBlue",
-      promoLabel: "Promoção",
+      // no promoLabel => no promotional badge and no crossed original price
       features: [
         "Vacinas obrigatórias",
         "Consultas em horário normal",
@@ -18,8 +17,8 @@ export function Plans() {
     },
     {
       name: "Conforto",
-      originalPrice: "R$59,90",
-      price: "R$49,90",
+      originalPrice: "R$49,90",
+      price: "R$39,90",
       color: "bg-wevets-skyBlue",
       promoLabel: "Promoção",
       features: [
@@ -32,8 +31,8 @@ export function Plans() {
     },
     {
       name: "Super",
-      originalPrice: "R$119,90",
-      price: "R$94,90",
+      originalPrice: "R$114,90",
+      price: "R$99,90",
       color: "bg-wevets-skyBlue",
       promoLabel: "Promoção",
       features: [
@@ -46,8 +45,8 @@ export function Plans() {
     },
     {
       name: "Ultra",
-      originalPrice: "R$179,90",
-      price: "R$149,90",
+      originalPrice: "R$249,90",
+      price: "R$199,90",
       color: "bg-wevets-skyBlue",
       promoLabel: "Promoção",
       features: [
@@ -95,7 +94,6 @@ export function Plans() {
                   </h3>
                 </div>
 
-                {/* Promo badge positioned above header; overflow-visible prevents clipping and badge wraps if needed */}
                 {plan.promoLabel && (
                   <div className="absolute right-4 -top-4 bg-wevets-paleLightBlue text-wevets-blue px-3 py-1 rounded-full text-xs font-bold shadow-md z-20 max-w-[120px] break-words text-center">
                     {plan.promoLabel}
