@@ -72,9 +72,17 @@ export function Network() {
 
   const selected = UNITS.find(u => u.id === selectedId) || UNITS[0];
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalUnit, setModalUnit] = useState<typeof UNITS[number] | null>(null);
+
   const embedUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${selected.lon - 0.02}%2C${selected.lat - 0.01}%2C${selected.lon + 0.02}%2C${selected.lat + 0.01}&layer=mapnik&marker=${selected.lat}%2C${selected.lon}`;
 
   const directionsUrl = `https://www.openstreetmap.org/directions?from=&to=${selected.lat}%2C${selected.lon}`;
+
+  const openUnitModal = (unit: typeof UNITS[number]) => {
+    setModalUnit(unit);
+    setModalOpen(true);
+  };
 
   return (
     <section className="py-12 px-6 lg:px-32 bg-white">
