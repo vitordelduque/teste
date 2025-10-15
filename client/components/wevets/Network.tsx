@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { MapPin, Search, Clock } from "lucide-react";
+import { Search } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useState, useMemo } from "react";
