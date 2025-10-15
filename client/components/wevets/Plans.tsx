@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export function Plans() {
   const plans = [
     {
-      name: "Plano Start",
+      name: "Básico",
       originalPrice: "R$19,90",
       price: "R$14,90",
       color: "bg-wevets-skyBlue",
@@ -17,7 +17,7 @@ export function Plans() {
       ],
     },
     {
-      name: "Plano Plus",
+      name: "Conforto",
       originalPrice: "R$59,90",
       price: "R$49,90",
       color: "bg-wevets-skyBlue",
@@ -31,7 +31,7 @@ export function Plans() {
       ],
     },
     {
-      name: "Plano Premium",
+      name: "Super",
       originalPrice: "R$119,90",
       price: "R$94,90",
       color: "bg-wevets-skyBlue",
@@ -45,11 +45,11 @@ export function Plans() {
       ],
     },
     {
-      name: "Plano Ultra",
+      name: "Ultra",
       originalPrice: "R$179,90",
       price: "R$149,90",
       color: "bg-wevets-skyBlue",
-      promoLabel: "Lançamento",
+      promoLabel: "Promoção",
       features: [
         "Vacinas e imunizações completas",
         "Consultas ilimitadas",
@@ -89,16 +89,18 @@ export function Plans() {
           {plans.map((plan, index) => (
             <div key={index} className="flex flex-col">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex-1 flex flex-col relative">
-                <div className={`${plan.color} px-6 py-2 rounded-t-2xl relative`}>
+                <div className={`${plan.color} px-6 py-2 rounded-t-2xl`}>
                   <h3 className="font-ubuntu text-xl font-bold text-white text-center">
                     {plan.name}
                   </h3>
-                  {plan.promoLabel && (
-                    <div className="absolute right-3 top-3 bg-wevets-paleLightBlue text-wevets-blue px-3 py-1 rounded-full text-xs font-bold">
-                      {plan.promoLabel}
-                    </div>
-                  )}
                 </div>
+
+                {/* Promo badge positioned above header to avoid overlapping the plan name */}
+                {plan.promoLabel && (
+                  <div className="absolute right-3 -top-3 bg-wevets-paleLightBlue text-wevets-blue px-3 py-1 rounded-full text-xs font-bold">
+                    {plan.promoLabel}
+                  </div>
+                )}
 
                 <div className={`${plan.color} pt-0 pb-2`}>
                   <div className="bg-white rounded-t-2xl p-6 flex-1 flex flex-col">
