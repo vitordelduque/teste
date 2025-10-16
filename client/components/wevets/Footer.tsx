@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex gap-12">
           <div className="flex flex-col gap-12">
             <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/e76ac8e11aadd81f6fc4dddbbf59c28e2f522ca0?width=814"
+              src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F4135522efcdc438487a2dbd4d670810f?format=webp&width=800"
               alt="WeVets Logo"
               className="w-96 h-auto"
             />
