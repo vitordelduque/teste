@@ -1,4 +1,4 @@
-import { Mail, Instagram, Phone } from "lucide-react";
+import { Mail, Instagram, Phone, ShieldCheck, Globe } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,8 +9,19 @@ export function Footer() {
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F4135522efcdc438487a2dbd4d670810f?format=webp&width=800"
               alt="WeVets Logo"
-              className="w-96 h-auto"
+              className="w-48 h-auto"
             />
+
+            <div className="mt-4 flex items-center gap-3">
+              <div className="flex items-center gap-2 bg-white/6 border border-white/12 text-white rounded-md px-3 py-2">
+                <ShieldCheck className="w-5 h-5 text-white" />
+                <span className="text-xs">SSL Secure</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/6 border border-white/12 text-white rounded-md px-3 py-2">
+                <Globe className="w-5 h-5 text-white" />
+                <span className="text-xs">Google Safe Browsing</span>
+              </div>
+            </div>
             
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-white">
