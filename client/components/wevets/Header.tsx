@@ -33,7 +33,7 @@ export function Header() {
       <header className="sticky top-0 z-50 w-full bg-white border-b border-wevets-lightBlue shadow-sm">
         <div className="px-6 lg:px-20 py-4 flex items-center gap-4">
           <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/801b7df63f8ba4aae7b226216246a9767b17a38a?width=316"
+            src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2Fed8d6c07e9dc448daebb62806f0ad76a?format=webp&width=800"
             alt="WeVets Logo"
             className="h-9 w-auto"
           />
@@ -93,7 +93,7 @@ export function Header() {
       {mobileOpen && (
         <div className="fixed inset-0 z-50 bg-white">
           <div className="px-6 py-4 flex items-center justify-between border-b">
-            <img src="https://api.builder.io/api/v1/image/assets/TEMP/801b7df63f8ba4aae7b226216246a9767b17a38a?width=316" alt="WeVets" className="h-8" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2Fed8d6c07e9dc448daebb62806f0ad76a?format=webp&width=800" alt="WeVets" className="h-8" />
             <div className="flex items-center gap-3">
               <Button className="px-3 py-1 text-sm" onClick={copyCoupon}>{copied ? "Copiado" : "Copiar cupom"}</Button>
               <button aria-label="Fechar menu" onClick={() => setMobileOpen(false)} className="p-2 rounded-md">
