@@ -52,12 +52,22 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right visual */}
+          {/* Right visual - replaced with layered image for depth */}
           <div className="lg:col-span-5 relative z-10 flex items-center justify-center">
             <div className="relative w-full max-w-md">
-              <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+              {/* Background layer (blurred, slightly larger) */}
+              <div className="absolute inset-0 rounded-3xl overflow-hidden transform scale-105 filter blur-sm opacity-70">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F6edab459a0864c6f99da7acbabe4d916"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F1c712f7ab9324a22a7310ecaff521ebd?format=webp&width=800"
+                  alt="Cachorro com tutor - fundo"
+                  className="w-full h-96 object-cover"
+                />
+              </div>
+
+              {/* Foreground image (main) */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform lg:-translate-y-6">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F1c712f7ab9324a22a7310ecaff521ebd?format=webp&width=800"
                   alt="Cachorro feliz com tutor"
                   className="w-full h-96 object-cover"
                 />
