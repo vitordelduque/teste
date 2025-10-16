@@ -15,19 +15,19 @@ export default {
     extend: {
       fontFamily: {
         ubuntu: [
-          "Ubuntu",
-          "-apple-system",
-          "Roboto",
-          "Helvetica",
-          "sans-serif",
-        ],
-        montserrat: [
-          "Montserrat",
-          "-apple-system",
-          "Roboto",
-          "Helvetica",
-          "sans-serif",
-        ],
+        "Peridot PE",
+        "-apple-system",
+        "Roboto",
+        "Helvetica",
+        "sans-serif",
+      ],
+      montserrat: [
+        "Peridot PE",
+        "-apple-system",
+        "Roboto",
+        "Helvetica",
+        "sans-serif",
+      ],
       },
       colors: {
         border: "hsl(var(--border))",
