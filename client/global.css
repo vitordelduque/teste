@@ -17,15 +17,15 @@
     --popover-foreground: 0 0% 0%;
 
     /* WeVets Primary Blue */
-    --primary: 201 75% 43%;
+    --primary: 207 93% 29%;
     --primary-foreground: 0 0% 100%;
 
     /* WeVets Secondary Navy */
-    --secondary: 210 64% 15%;
+    --secondary: 215 54% 19%;
     --secondary-foreground: 0 0% 100%;
 
-    /* WeVets Light Blue */
-    --accent: 197 79% 57%;
+    /* WeVets Accent Cyan */
+    --accent: 182 90% 41%;
     --accent-foreground: 0 0% 0%;
 
     --muted: 210 40% 96.1%;
@@ -36,7 +36,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 201 75% 43%;
+    --ring: 207 93% 29%;
 
     --radius: 0.5rem;
   }
