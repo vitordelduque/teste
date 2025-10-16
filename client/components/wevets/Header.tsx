@@ -21,9 +21,15 @@ export function Header() {
     <>
       <div className="w-full bg-wevets-blue text-white text-center text-sm py-2">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-4 px-4">
-          <span className="font-montserrat font-semibold">Primeira compra com 65% OFF</span>
-          <span className="font-ubuntu font-bold tracking-wide">Use o cupom</span>
-          <span className="font-montserrat font-bold bg-white text-wevets-blue px-2 py-0.5 rounded">{coupon}</span>
+          <span className="font-montserrat font-semibold">
+            Primeira compra com 65% OFF
+          </span>
+          <span className="font-ubuntu font-bold tracking-wide">
+            Use o cupom
+          </span>
+          <span className="font-montserrat font-bold bg-white text-wevets-blue px-2 py-0.5 rounded">
+            {coupon}
+          </span>
           <Button className="ml-2 px-3 py-1 text-sm" onClick={copyCoupon}>
             {copied ? "Copiado" : "Copiar cupom"}
           </Button>
@@ -40,32 +46,56 @@ export function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-2 font-montserrat font-bold text-base">
-            <Button variant="ghost" className="text-black hover:text-wevets-blue">
+            <Button
+              variant="ghost"
+              className="text-black hover:text-wevets-blue"
+            >
               Início
             </Button>
-            <Button variant="ghost" className="text-black hover:text-wevets-blue">
+            <Button
+              variant="ghost"
+              className="text-black hover:text-wevets-blue"
+            >
               Benefícios
             </Button>
-            <Button variant="ghost" className="text-black hover:text-wevets-blue">
+            <Button
+              variant="ghost"
+              className="text-black hover:text-wevets-blue"
+            >
               Planos
             </Button>
-            <Button variant="ghost" className="text-black hover:text-wevets-blue">
+            <Button
+              variant="ghost"
+              className="text-black hover:text-wevets-blue"
+            >
               Como funciona
             </Button>
-            <Button variant="ghost" className="text-black hover:text-wevets-blue">
+            <Button
+              variant="ghost"
+              className="text-black hover:text-wevets-blue"
+            >
               FAQ
             </Button>
-            <Button variant="ghost" className="text-black hover:text-wevets-blue">
+            <Button
+              variant="ghost"
+              className="text-black hover:text-wevets-blue"
+            >
               Unidades
             </Button>
-            <Button variant="ghost" className="text-wevets-blue hover:text-wevets-blue">
+            <Button
+              variant="ghost"
+              className="text-wevets-blue hover:text-wevets-blue"
+            >
               Área do tutor
             </Button>
           </nav>
 
           {/* Mobile menu button */}
           <div className="ml-auto flex items-center gap-4 md:hidden">
-            <Button variant="outline" className="border-wevets-blue text-wevets-blue font-bold">
+            <Button
+              variant="outline"
+              className="border-wevets-blue text-wevets-blue font-bold"
+            >
               Fale conosco
             </Button>
             <button
@@ -79,7 +109,10 @@ export function Header() {
 
           {/* Desktop CTAs */}
           <div className="ml-auto hidden md:flex items-center gap-4">
-            <Button variant="outline" className="border-wevets-blue text-wevets-blue font-bold">
+            <Button
+              variant="outline"
+              className="border-wevets-blue text-wevets-blue font-bold"
+            >
               Fale conosco
             </Button>
             <Button className="bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold">
@@ -93,27 +126,79 @@ export function Header() {
       {mobileOpen && (
         <div className="fixed inset-0 z-50 bg-white">
           <div className="px-6 py-4 flex items-center justify-between border-b">
-            <img src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2Fed8d6c07e9dc448daebb62806f0ad76a?format=webp&width=800" alt="WeVets" className="h-8" />
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2Fed8d6c07e9dc448daebb62806f0ad76a?format=webp&width=800"
+              alt="WeVets"
+              className="h-8"
+            />
             <div className="flex items-center gap-3">
-              <Button className="px-3 py-1 text-sm" onClick={copyCoupon}>{copied ? "Copiado" : "Copiar cupom"}</Button>
-              <button aria-label="Fechar menu" onClick={() => setMobileOpen(false)} className="p-2 rounded-md">
+              <Button className="px-3 py-1 text-sm" onClick={copyCoupon}>
+                {copied ? "Copiado" : "Copiar cupom"}
+              </Button>
+              <button
+                aria-label="Fechar menu"
+                onClick={() => setMobileOpen(false)}
+                className="p-2 rounded-md"
+              >
                 <X className="w-5 h-5 text-wevets-navy" />
               </button>
             </div>
           </div>
 
           <nav className="px-6 py-6 space-y-4">
-            <Button variant="ghost" className="w-full text-left text-black text-lg">Início</Button>
-            <Button variant="ghost" className="w-full text-left text-black text-lg">Benefícios</Button>
-            <Button variant="ghost" className="w-full text-left text-black text-lg">Planos</Button>
-            <Button variant="ghost" className="w-full text-left text-black text-lg">Como funciona</Button>
-            <Button variant="ghost" className="w-full text-left text-black text-lg">FAQ</Button>
-            <Button variant="ghost" className="w-full text-left text-black text-lg">Unidades</Button>
-            <Button variant="ghost" className="w-full text-left text-wevets-blue text-lg">Área do tutor</Button>
+            <Button
+              variant="ghost"
+              className="w-full text-left text-black text-lg"
+            >
+              Início
+            </Button>
+            <Button
+              variant="ghost"
+              className="w-full text-left text-black text-lg"
+            >
+              Benefícios
+            </Button>
+            <Button
+              variant="ghost"
+              className="w-full text-left text-black text-lg"
+            >
+              Planos
+            </Button>
+            <Button
+              variant="ghost"
+              className="w-full text-left text-black text-lg"
+            >
+              Como funciona
+            </Button>
+            <Button
+              variant="ghost"
+              className="w-full text-left text-black text-lg"
+            >
+              FAQ
+            </Button>
+            <Button
+              variant="ghost"
+              className="w-full text-left text-black text-lg"
+            >
+              Unidades
+            </Button>
+            <Button
+              variant="ghost"
+              className="w-full text-left text-wevets-blue text-lg"
+            >
+              Área do tutor
+            </Button>
 
             <div className="mt-6 space-y-3">
-              <Button className="w-full bg-wevets-blue text-white font-bold py-3">Assinar</Button>
-              <Button variant="outline" className="w-full border-wevets-blue text-wevets-navy font-bold py-3">Fale com um especialista</Button>
+              <Button className="w-full bg-wevets-blue text-white font-bold py-3">
+                Assinar
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full border-wevets-blue text-wevets-navy font-bold py-3"
+              >
+                Fale com um especialista
+              </Button>
             </div>
           </nav>
         </div>
