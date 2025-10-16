@@ -12,16 +12,11 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left content */}
           <div className="lg:col-span-7 text-white relative z-10">
-            <div className="mb-4 inline-flex items-center gap-3 bg-wevets-paleLightBlue text-wevets-blue px-3 py-1 rounded-full text-sm font-semibold">
-              <span className="uppercase">Oferta</span>
-              <span>65% OFF na primeira compra</span>
-            </div>
-
-            <h1 className="font-ubuntu text-5xl sm:text-6xl leading-tight font-extrabold tracking-tight">
+            <h1 className="font-ubuntu text-[40px] leading-[60px] sm:text-[40px] sm:leading-[60px] font-extrabold tracking-tight">
               Proteja o seu pet com o melhor plano de saúde
             </h1>
 
-            <p className="mt-4 max-w-xl text-wevets-lightBlue text-lg">
+            <p className="mt-4 max-w-xl text-wevets-lightBlue text-base">
               Planos completos com cobertura nacional, atendimento 24h e rede de hospitais parceiros. Escolha o plano ideal em segundos.
             </p>
 
