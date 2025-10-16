@@ -1,7 +1,8 @@
 /** @import must precede all other statements */
 @font-face {
-  font-family: 'Peridot PE';
-  src: url('https://cdn.builder.io/o/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F418446dd51b245d68e1a195baab5d8fa?alt=media&token=72e4ac30-122d-498a-9200-852e77b8cb9a&apiKey=ad3b24e0eebc41a888274aae2381ca13') format('opentype');
+  font-family: "Peridot PE";
+  src: url("https://cdn.builder.io/o/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F418446dd51b245d68e1a195baab5d8fa?alt=media&token=72e4ac30-122d-498a-9200-852e77b8cb9a&apiKey=ad3b24e0eebc41a888274aae2381ca13")
+    format("opentype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -55,7 +56,12 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Peridot PE', -apple-system, Roboto, Helvetica, sans-serif;
+    font-family:
+      "Peridot PE",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
   }
 
   h1,
@@ -64,7 +70,12 @@
   h4,
   h5,
   h6 {
-    font-family: 'Peridot PE', -apple-system, Roboto, Helvetica, sans-serif;
+    font-family:
+      "Peridot PE",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
