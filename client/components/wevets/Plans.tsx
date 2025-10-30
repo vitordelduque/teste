@@ -62,6 +62,19 @@ export function Plans() {
 
   const carouselRef = useRef<HTMLDivElement | null>(null);
 
+  const safeScroll = (direction: 'prev' | 'next') => {
+    try {
+      // typeof check prevents ReferenceError if variable is missing in some edge state
+      if (typeof carouselRef === 'undefined') return;
+      const el = carouselRef.current;
+      if (!el) return;
+      const amount = Math.floor(el.clientWidth * 0.8) * (direction === 'next' ? 1 : -1);
+      el.scrollBy({ left: amount, behavior: 'smooth' });
+    } catch (e) {
+      // swallow runtime errors to prevent app crash
+    }
+  };
+
   return (
     <section
       className="py-12 px-6 lg:px-32"
