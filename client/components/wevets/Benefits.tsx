@@ -7,7 +7,7 @@ export function Benefits() {
         Confira alguns <span className="text-wevets-blue">benefícios</span> imperdíveis!
       </h2>
       
-      <div className="grid grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <div className="border-2 border-wevets-skyBlue rounded-2xl p-6 bg-wevets-paleLightBlue shadow-md">
           <div className="flex flex-col items-center gap-4">
             <svg className="w-16 h-16 text-wevets-skyBlue" fill="currentColor" viewBox="0 0 66 65">
