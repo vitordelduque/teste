@@ -69,11 +69,11 @@ export function Advantages() {
             </svg>
           </div>
 
-          <h2 className="font-ubuntu text-3xl font-bold text-white text-center mb-6">
+          <h2 className="font-ubuntu text-3xl font-bold text-white text-left mb-6 w-full md:w-auto">
             Zero burocracias
           </h2>
 
-          <div className="space-y-4 mb-6">
+          <div className="space-y-4 mb-6 w-full md:w-auto text-left">
             {advantages2.map((advantage, index) => (
               <div key={index} className="flex items-start gap-2">
                 <Check className="w-6 h-6 text-white flex-shrink-0 mt-0.5" />
@@ -82,7 +82,7 @@ export function Advantages() {
             ))}
           </div>
 
-          <p className="font-montserrat text-sm text-white">
+          <p className="font-montserrat text-sm text-white text-left w-full md:w-auto">
             *Antecipação de uso disponível na recepção das unidades. Confirmar
             valores com atendente.
           </p>
