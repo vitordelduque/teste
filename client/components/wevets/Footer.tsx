@@ -3,9 +3,9 @@ import { Mail, Instagram, Phone, ShieldCheck, Globe } from "lucide-react";
 export function Footer() {
   return (
     <>
-      <footer className="bg-wevets-navy py-12 px-32">
-        <div className="flex gap-12">
-          <div className="flex flex-col gap-12">
+      <footer className="bg-wevets-navy py-12 px-4 sm:px-6 md:px-12 lg:px-32">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-1 flex flex-col gap-6">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fad3b24e0eebc41a888274aae2381ca13%2F4135522efcdc438487a2dbd4d670810f?format=webp&width=800"
               alt="WeVets Logo"
