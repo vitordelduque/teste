@@ -47,7 +47,7 @@ export function Footer() {
         </div>
       </footer>
 
-      <div className="bg-wevets-navy border-t border-white/24 py-6 px-32">
+      <div className="bg-wevets-navy border-t border-white/24 py-6 px-4 sm:px-6 md:px-12 lg:px-32">
         <div className="max-w-6xl mx-auto text-center">
           <span className="text-white text-sm">
             DR. PATINHAS HOLDING S.A. &nbsp; CNPJ 37.078.598/0001-41 &nbsp;
