@@ -41,15 +41,15 @@ export function Advantages() {
         </div>
 
         <div
-          className="md:flex-1 py-12 px-4 sm:px-6 md:px-12 lg:px-32 flex flex-col justify-center items-center text-center"
+          className="md:flex-1 py-12 px-4 sm:px-6 md:px-12 lg:px-32 flex flex-col justify-center items-center"
           style={{
             background:
               "linear-gradient(0deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), #1C7BBA",
           }}
         >
-          <div className="flex justify-center items-center mb-6">
+          <div className="flex justify-center items-center mb-6 w-full">
             <svg
-              className="w-32 h-auto block"
+              className="w-32 h-auto block mx-auto"
               viewBox="0 0 127 127"
               fill="none"
               preserveAspectRatio="xMidYMid meet"
