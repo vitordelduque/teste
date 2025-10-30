@@ -107,9 +107,7 @@ export function Plans() {
 
         {/* Mobile carousel */}
         <div className="md:hidden relative">
-          <button aria-label="Anterior" className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full p-2 shadow-md" onClick={() => {
-            const el = carouselRef.current; if (el) el.scrollBy({ left: -Math.floor(el.clientWidth * 0.8), behavior: 'smooth' });
-          }}>
+          <button aria-label="Anterior" className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full p-2 shadow-md" onClick={() => safeScroll('prev')}>
             <ChevronRight className="w-5 h-5 rotate-180 text-wevets-navy" />
           </button>
 
