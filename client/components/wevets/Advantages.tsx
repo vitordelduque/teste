@@ -41,7 +41,7 @@ export function Advantages() {
         </div>
 
         <div
-          className="md:flex-1 py-12 px-4 sm:px-6 md:px-12 lg:px-32"
+          className="md:flex-1 py-12 px-4 sm:px-6 md:px-12 lg:px-32 flex flex-col justify-center items-center text-center"
           style={{
             background:
               "linear-gradient(0deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), #1C7BBA",
