@@ -30,13 +30,13 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Promo stripe positioned between header and hero; mobile height is half */}
-      <div className="w-full bg-wevets-blue text-white text-center text-sm h-5 md:h-10 flex items-center">
-        <div className="max-w-6xl mx-auto flex items-center justify-center gap-4 px-4 w-full">
+      {/* Promo stripe positioned between header and hero; mobile shows up to two lines */}
+      <div className="w-full bg-wevets-blue text-white text-center text-xs md:text-sm flex items-center overflow-hidden">
+        <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 px-4 w-full flex-wrap md:flex-nowrap py-1 md:py-2 leading-tight max-h-[3rem] md:max-h-none">
           <span className="font-montserrat font-semibold">Primeira compra com 65% OFF</span>
-          <span className="font-ubuntu font-bold tracking-wide ml-2">Use o cupom</span>
-          <span className="font-montserrat font-bold bg-white text-wevets-blue px-2 py-0.5 rounded ml-2">{coupon}</span>
-          <Button className="ml-2 px-3 py-1 text-sm" onClick={copyCoupon}>
+          <span className="font-ubuntu font-bold tracking-wide ml-1">Use o cupom</span>
+          <span className="font-montserrat font-bold bg-white text-wevets-blue px-2 py-0.5 rounded ml-1">{coupon}</span>
+          <Button className="ml-2 px-3 py-1 text-xs md:text-sm" onClick={copyCoupon}>
             {copied ? "Copiado" : "Copiar cupom"}
           </Button>
         </div>
