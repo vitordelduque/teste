@@ -5,9 +5,10 @@ export function HowItWorks() {
     <section className="py-12 px-4 sm:px-6 md:px-12 lg:px-32 bg-white">
       <div className="max-w-5xl mx-auto">
         <h2 className="font-ubuntu text-4xl font-bold mb-8">
-          Como funciona um plano de saúde <span className="text-wevets-blue">WeVets</span>?
+          Como funciona um plano de saúde{" "}
+          <span className="text-wevets-blue">WeVets</span>?
         </h2>
-        
+
         <div className="space-y-6 mb-8">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-12 h-12 bg-wevets-blue rounded-full flex items-center justify-center text-white font-bold">
@@ -22,7 +23,7 @@ export function HowItWorks() {
               </p>
             </div>
           </div>
-          
+
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-12 h-12 bg-wevets-blue rounded-full flex items-center justify-center text-white font-bold">
               ✓
@@ -36,7 +37,7 @@ export function HowItWorks() {
               </p>
             </div>
           </div>
-          
+
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-12 h-12 bg-wevets-blue rounded-full flex items-center justify-center text-white font-bold">
               ✓
@@ -46,12 +47,13 @@ export function HowItWorks() {
                 Todos online na cobertura
               </h3>
               <p className="font-montserrat text-base text-wevets-gray">
-                Consulte a cobertura completa de todos os serviços online com facilidade
+                Consulte a cobertura completa de todos os serviços online com
+                facilidade
               </p>
             </div>
           </div>
         </div>
-        
+
         <Button className="bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold">
           Saiba mais
         </Button>

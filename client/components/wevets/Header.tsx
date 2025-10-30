@@ -19,7 +19,6 @@ export function Header() {
 
   return (
     <>
-
       <header className="sticky top-0 z-50 w-full bg-white border-b border-wevets-lightBlue shadow-sm">
         <div className="px-6 lg:px-20 py-4 flex items-center gap-4">
           <img
