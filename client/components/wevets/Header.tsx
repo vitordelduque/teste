@@ -19,22 +19,6 @@ export function Header() {
 
   return (
     <>
-      <div className="w-full bg-wevets-blue text-white text-center text-sm py-2">
-        <div className="max-w-6xl mx-auto flex items-center justify-center gap-4 px-4">
-          <span className="font-montserrat font-semibold">
-            Primeira compra com 65% OFF
-          </span>
-          <span className="font-ubuntu font-bold tracking-wide">
-            Use o cupom
-          </span>
-          <span className="font-montserrat font-bold bg-white text-wevets-blue px-2 py-0.5 rounded">
-            {coupon}
-          </span>
-          <Button className="ml-2 px-3 py-1 text-sm" onClick={copyCoupon}>
-            {copied ? "Copiado" : "Copiar cupom"}
-          </Button>
-        </div>
-      </div>
 
       <header className="sticky top-0 z-50 w-full bg-white border-b border-wevets-lightBlue shadow-sm">
         <div className="px-6 lg:px-20 py-4 flex items-center gap-4">
