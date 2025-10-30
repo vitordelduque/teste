@@ -19,7 +19,7 @@ export function PetSituations() {
   ];
 
   return (
-    <section className="py-12 px-32 bg-wevets-paleLightBlue">
+    <section className="py-12 px-4 sm:px-6 md:px-12 lg:px-32 bg-wevets-paleLightBlue">
       <h2 className="font-ubuntu text-4xl font-bold text-center mb-8">
         Seu pet <span className="text-wevets-blue">protegido</span>!<br />
         Veja algumas situações em que os planos podem <span className="text-wevets-blue">salvar o seu pet</span>
