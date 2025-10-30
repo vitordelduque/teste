@@ -160,9 +160,7 @@ export function Plans() {
             ))}
           </div>
 
-          <button aria-label="Próximo" className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full p-2 shadow-md" onClick={() => {
-            const el = carouselRef.current; if (el) el.scrollBy({ left: Math.floor(el.clientWidth * 0.8), behavior: 'smooth' });
-          }}>
+          <button aria-label="Próximo" className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full p-2 shadow-md" onClick={() => safeScroll('next')}>
             <ChevronRight className="w-5 h-5 text-wevets-navy" />
           </button>
         </div>
