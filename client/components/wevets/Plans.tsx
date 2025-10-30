@@ -1,4 +1,5 @@
 import { Check, ChevronRight, Diamond } from "lucide-react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 export function Plans() {
@@ -89,22 +90,81 @@ export function Plans() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Mobile carousel */}
+        <div className="md:hidden relative">
+          <button aria-label="Anterior" className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full p-2 shadow-md" onClick={() => {
+            const el = carouselRef.current; if (el) el.scrollBy({ left: -Math.floor(el.clientWidth * 0.8), behavior: 'smooth' });
+          }}>
+            <ChevronRight className="w-5 h-5 rotate-180 text-wevets-navy" />
+          </button>
+
+          <div ref={carouselRef} className="flex gap-4 overflow-x-auto px-4 py-2 snap-x snap-mandatory scrollbar-none">
+            {plans.map((plan, index) => (
+              <div key={index} className="snap-start flex-shrink-0 w-[80%]">
+                <div className="bg-white rounded-2xl shadow-lg overflow-visible flex flex-col relative">
+                  <div className={`${plan.color} px-6 py-3 rounded-t-2xl relative`}>
+                    <h3 className="font-ubuntu text-lg font-bold text-white text-center">{plan.name}</h3>
+                  </div>
+
+                  {plan.promoLabel && (
+                    <div className="absolute right-4 -top-4 bg-wevets-paleLightBlue text-wevets-blue px-3 py-1 rounded-full text-xs font-bold shadow-md z-20 max-w-[120px] break-words text-center">{plan.promoLabel}</div>
+                  )}
+
+                  <div className={`${plan.color} pt-0 pb-2`}>
+                    <div className="bg-white rounded-t-2xl p-4 flex flex-col">
+                      <div className="flex flex-col items-center justify-center mb-3">
+                        {plan.originalPrice ? (
+                          <div className="text-center">
+                            <div className="text-sm text-gray-500 line-through">De {plan.originalPrice}</div>
+                            <div className="flex items-baseline gap-2 justify-center">
+                              <span className="font-ubuntu text-2xl font-bold text-wevets-skyBlue">{plan.price}</span>
+                              <span className="font-ubuntu text-sm font-bold text-wevets-skyBlue">/mês</span>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="flex items-center justify-center mb-3">
+                            <span className="font-ubuntu text-2xl font-bold text-wevets-skyBlue">{plan.price}</span>
+                            <span className="font-ubuntu text-sm font-bold text-wevets-skyBlue">/mês</span>
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="space-y-2 mb-4">
+                        {plan.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-2">
+                            <Check className="w-5 h-5 text-wevets-blue flex-shrink-0" />
+                            <span className="font-montserrat text-xs text-wevets-gray">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <Button className="w-full bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold mb-2">Assinar</Button>
+                      <button className="flex items-center justify-center gap-1 text-wevets-blue text-xs"><span>Serviços inclusos e tempo para uso</span><ChevronRight className="w-4 h-4" /></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button aria-label="Próximo" className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 rounded-full p-2 shadow-md" onClick={() => {
+            const el = carouselRef.current; if (el) el.scrollBy({ left: Math.floor(el.clientWidth * 0.8), behavior: 'smooth' });
+          }}>
+            <ChevronRight className="w-5 h-5 text-wevets-navy" />
+          </button>
+        </div>
+
+        {/* Desktop grid */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, index) => (
             <div key={index} className="flex flex-col">
               <div className="bg-white rounded-2xl shadow-lg overflow-visible flex-1 flex flex-col relative">
-                <div
-                  className={`${plan.color} px-6 py-3 rounded-t-2xl relative`}
-                >
-                  <h3 className="font-ubuntu text-xl font-bold text-white text-center">
-                    {plan.name}
-                  </h3>
+                <div className={`${plan.color} px-6 py-3 rounded-t-2xl relative`}>
+                  <h3 className="font-ubuntu text-xl font-bold text-white text-center">{plan.name}</h3>
                 </div>
 
                 {plan.promoLabel && (
-                  <div className="absolute right-4 -top-4 bg-wevets-paleLightBlue text-wevets-blue px-3 py-1 rounded-full text-xs font-bold shadow-md z-20 max-w-[120px] break-words text-center">
-                    {plan.promoLabel}
-                  </div>
+                  <div className="absolute right-4 -top-4 bg-wevets-paleLightBlue text-wevets-blue px-3 py-1 rounded-full text-xs font-bold shadow-md z-20 max-w-[120px] break-words text-center">{plan.promoLabel}</div>
                 )}
 
                 <div className={`${plan.color} pt-0 pb-2`}>
@@ -112,29 +172,17 @@ export function Plans() {
                     <div className="flex flex-col items-center justify-center mb-4">
                       {plan.originalPrice ? (
                         <div className="text-center">
-                          <div className="text-sm text-gray-500 line-through">
-                            De {plan.originalPrice}
-                          </div>
+                          <div className="text-sm text-gray-500 line-through">De {plan.originalPrice}</div>
                           <div className="flex items-baseline gap-2 justify-center">
-                            <span className="font-ubuntu text-4xl font-bold text-wevets-skyBlue">
-                              {plan.price}
-                            </span>
-                            <span className="font-ubuntu text-lg font-bold text-wevets-skyBlue">
-                              /mês
-                            </span>
+                            <span className="font-ubuntu text-4xl font-bold text-wevets-skyBlue">{plan.price}</span>
+                            <span className="font-ubuntu text-lg font-bold text-wevets-skyBlue">/mês</span>
                           </div>
-                          <div className="text-sm text-wevets-blue font-semibold mt-1">
-                            Oferta por tempo limitado
-                          </div>
+                          <div className="text-sm text-wevets-blue font-semibold mt-1">Oferta por tempo limitado</div>
                         </div>
                       ) : (
                         <div className="flex items-center justify-center mb-4">
-                          <span className="font-ubuntu text-4xl font-bold text-wevets-skyBlue">
-                            {plan.price}
-                          </span>
-                          <span className="font-ubuntu text-lg font-bold text-wevets-skyBlue">
-                            /mês
-                          </span>
+                          <span className="font-ubuntu text-4xl font-bold text-wevets-skyBlue">{plan.price}</span>
+                          <span className="font-ubuntu text-lg font-bold text-wevets-skyBlue">/mês</span>
                         </div>
                       )}
                     </div>
@@ -143,23 +191,16 @@ export function Plans() {
                       {plan.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           <Check className="w-5 h-5 text-wevets-blue flex-shrink-0" />
-                          <span className="font-montserrat text-xs text-wevets-gray">
-                            {feature}
-                          </span>
+                          <span className="font-montserrat text-xs text-wevets-gray">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     <div className="h-px bg-gray-200 my-4" />
 
-                    <Button className="w-full bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold mb-4">
-                      Assinar
-                    </Button>
+                    <Button className="w-full bg-wevets-blue hover:bg-wevets-blue/90 text-white font-bold mb-4">Assinar</Button>
 
-                    <button className="flex items-center justify-center gap-1 text-wevets-blue text-xs">
-                      <span>Serviços inclusos e tempo para uso</span>
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
+                    <button className="flex items-center justify-center gap-1 text-wevets-blue text-xs"><span>Serviços inclusos e tempo para uso</span><ChevronRight className="w-4 h-4" /></button>
                   </div>
                 </div>
               </div>
