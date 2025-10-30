@@ -60,6 +60,8 @@ export function Plans() {
     },
   ];
 
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <section
       className="py-12 px-6 lg:px-32"
