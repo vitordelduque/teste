@@ -47,24 +47,27 @@ export function Advantages() {
               "linear-gradient(0deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), #1C7BBA",
           }}
         >
-          <svg
-            className="w-32 h-auto mx-auto mb-6"
-            viewBox="0 0 127 127"
-            fill="none"
-          >
-            <path
-              d="M100.058 124.528C113.577 124.528 124.537 113.527 124.537 99.9561C124.537 86.3852 113.577 75.3838 100.058 75.3838C86.5383 75.3838 75.5786 86.3852 75.5786 99.9561C75.5786 113.527 86.5383 124.528 100.058 124.528Z"
-              stroke="#71C7F7"
-              strokeWidth="4"
-            />
-            <path
-              d="M88.7996 100.942L97.0452 109.101L114.37 91.9609"
-              stroke="#71C7F7"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <div className="flex justify-center items-center mb-6">
+            <svg
+              className="w-32 h-auto block"
+              viewBox="0 0 127 127"
+              fill="none"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <path
+                d="M100.058 124.528C113.577 124.528 124.537 113.527 124.537 99.9561C124.537 86.3852 113.577 75.3838 100.058 75.3838C86.5383 75.3838 75.5786 86.3852 75.5786 99.9561C75.5786 113.527 86.5383 124.528 100.058 124.528Z"
+                stroke="#71C7F7"
+                strokeWidth="4"
+              />
+              <path
+                d="M88.7996 100.942L97.0452 109.101L114.37 91.9609"
+                stroke="#71C7F7"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
 
           <h2 className="font-ubuntu text-3xl font-bold text-white text-center mb-6">
             Zero burocracias
