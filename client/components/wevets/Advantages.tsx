@@ -17,8 +17,9 @@ export function Advantages() {
   ];
 
   return (
-    <section className="flex">
-      <div className="flex-1 bg-wevets-blue py-12 px-32">
+    <section className="py-12 bg-transparent">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
+      <div className="md:flex-1 bg-wevets-blue py-12 px-4 sm:px-6 md:px-12 lg:px-32">
         <img src="https://api.builder.io/api/v1/image/assets/TEMP/d8e95adb8624bc5f5930b2082ec5ac936878aad4?width=236" alt="" className="w-32 h-auto mx-auto mb-6" />
         
         <h2 className="font-ubuntu text-3xl font-bold text-white text-center mb-6">
@@ -35,7 +36,7 @@ export function Advantages() {
         </div>
       </div>
       
-      <div className="flex-1 py-12 px-32" style={{ background: "linear-gradient(0deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), #1C7BBA" }}>
+      <div className="md:flex-1 py-12 px-4 sm:px-6 md:px-12 lg:px-32" style={{ background: "linear-gradient(0deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), #1C7BBA" }}>
         <svg className="w-32 h-auto mx-auto mb-6" viewBox="0 0 127 127" fill="none">
           <path d="M100.058 124.528C113.577 124.528 124.537 113.527 124.537 99.9561C124.537 86.3852 113.577 75.3838 100.058 75.3838C86.5383 75.3838 75.5786 86.3852 75.5786 99.9561C75.5786 113.527 86.5383 124.528 100.058 124.528Z" stroke="#71C7F7" strokeWidth="4"/>
           <path d="M88.7996 100.942L97.0452 109.101L114.37 91.9609" stroke="#71C7F7" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -57,6 +58,7 @@ export function Advantages() {
         <p className="font-montserrat text-sm text-white">
           *Antecipação de uso disponível na recepção das unidades. Confirmar valores com atendente.
         </p>
+      </div>
       </div>
     </section>
   );
