@@ -2,7 +2,7 @@ import { ChevronRight } from "lucide-react";
 
 export function Benefits() {
   return (
-    <section className="py-12 px-32 bg-white">
+    <section className="py-12 px-4 sm:px-6 md:px-12 lg:px-32 bg-white">
       <h2 className="font-ubuntu text-4xl font-bold text-center mb-8">
         Confira alguns <span className="text-wevets-blue">benefícios</span> imperdíveis!
       </h2>
