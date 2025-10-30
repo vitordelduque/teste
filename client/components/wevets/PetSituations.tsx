@@ -25,7 +25,7 @@ export function PetSituations() {
         Veja algumas situações em que os planos podem <span className="text-wevets-blue">salvar o seu pet</span>
       </h2>
       
-      <div className="grid grid-cols-2 gap-4 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
         {situations.map((situation, index) => (
           <div key={index} className="bg-white rounded-lg p-6 shadow-lg">
             <div className="flex items-center gap-6 mb-4">
