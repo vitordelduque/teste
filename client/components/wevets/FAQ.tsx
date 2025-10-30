@@ -8,7 +8,7 @@ export function FAQ() {
     "O que é coparticipação dos planos e como funciona ?",
     "O site é seguro?",
     "Quais as formas de pagamento da Wevets?",
-    "Outra pessoa pode levar o meu pet para o atendimento ?"
+    "Outra pessoa pode levar o meu pet para o atendimento ?",
   ];
 
   return (
@@ -16,7 +16,7 @@ export function FAQ() {
       <h2 className="font-ubuntu text-4xl font-bold text-center mb-8">
         Dúvidas frequentes
       </h2>
-      
+
       <div className="max-w-4xl mx-auto space-y-4">
         {questions.map((question, index) => (
           <div key={index} className="border-b-2 border-wevets-blue py-4">
